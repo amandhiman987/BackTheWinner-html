@@ -1,0 +1,90 @@
+.kt-font-xxl{
+    font-size: 1.85rem;
+}
+
+.kt-subheader__title{
+    border-bottom: 1px solid #22b9ff;
+    width: 100%;
+}
+
+.progress--sm{
+    height: .5rem;
+}
+
+.team-stats-wrap .col-6:last-child .team-stats{
+    left: 10px;
+    position: relative;
+}
+
+.team-stats{
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+}
+
+.team-stats .stat-label{
+    min-width: 52px;
+}
+
+.team-stats .stat-value{
+    min-width: 35px;
+}
+
+.kt-portlet__head-subtitle{
+    border-bottom: 1px solid #22b9ff;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.truncate {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.kt-portlet .kt-portlet__space-x{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.aside-hd{
+    color: #22b9ff;
+    background: #e8f6ff;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+}
+
+.aside-sub-hd{
+    border-bottom: 1px solid #22b9ff;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    color: #343a40;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.filter-single:after{
+    clear: both;
+    display: block;
+    content: '';
+}
+
+.font-weight-semi-bold{
+    font-weight: 600 !important;
+}
+
+@media (min-width: 1025px){
+    .kt-aside-menu-wrapper{
+        position: relative;
+    }
+    .kt-aside .kt-aside-menu {
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+    }
+}

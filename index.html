@@ -15,13 +15,14 @@
 		<!--end::Fonts -->
 
 		<!--begin::Page Vendors Styles(used by this page) -->
-		<link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
 
 		<!--end::Page Vendors Styles -->
 
 		<!--begin::Global Theme Styles(used by all pages) -->
 		<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="assets/plugins/rangeslider/rangeslider.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/custom/custom.css" rel="stylesheet" type="text/css" />
 
 		<!--end::Global Theme Styles -->
 
@@ -34,7 +35,7 @@
 	<!-- end::Head -->
 
 	<!-- begin::Body -->
-	<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-aside--minimize kt-page--loading">
+	<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading">
 
 		<!-- begin:: Page -->
 
@@ -42,13 +43,12 @@
 		<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
 			<div class="kt-header-mobile__logo">
 				<a href="index.html">
-					<img alt="Logo" src="assets/media/logos/logo-6.png" />
+					<h1 class="text-uppercase kt-font-xl kt-font-brand m-0">BackTheWinner</h1>
 				</a>
 			</div>
 			<div class="kt-header-mobile__toolbar">
 				<button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left" id="kt_aside_mobile_toggler"><span></span></button>
 				<button class="kt-header-mobile__toolbar-toggler" id="kt_header_mobile_toggler"><span></span></button>
-				<button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler"><i class="flaticon-more"></i></button>
 			</div>
 		</div>
 
@@ -61,112 +61,121 @@
 				<div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">
 
 					<!-- begin:: Brand -->
-					<div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
+					<div class="kt-aside__brand kt-grid__item px-3 " id="kt_aside_brand" kt-hidden-height="65" style="">
 						<div class="kt-aside__brand-logo">
 							<a href="index.html">
-								<img alt="Logo" src="assets/media/logos/logo-7.png" />
+								<h1 class="text-uppercase kt-font-xxl kt-font-brand m-0 font-weight-bold">BackTheWinner</h1>
 							</a>
 						</div>
-					</div>
 
+						<div class="kt-aside__brand-tools d-none">
+							<button class="kt-aside__brand-aside-toggler" id="kt_aside_toggler">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+										<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+											<polygon points="0 0 24 0 24 24 0 24"></polygon>
+											<path d="M5.29288961,6.70710318 C4.90236532,6.31657888 4.90236532,5.68341391 5.29288961,5.29288961 C5.68341391,4.90236532 6.31657888,4.90236532 6.70710318,5.29288961 L12.7071032,11.2928896 C13.0856821,11.6714686 13.0989277,12.281055 12.7371505,12.675721 L7.23715054,18.675721 C6.86395813,19.08284 6.23139076,19.1103429 5.82427177,18.7371505 C5.41715278,18.3639581 5.38964985,17.7313908 5.76284226,17.3242718 L10.6158586,12.0300721 L5.29288961,6.70710318 Z" fill="#000000" fill-rule="nonzero" transform="translate(8.999997, 11.999999) scale(-1, 1) translate(-8.999997, -11.999999) "></path>
+											<path d="M10.7071009,15.7071068 C10.3165766,16.0976311 9.68341162,16.0976311 9.29288733,15.7071068 C8.90236304,15.3165825 8.90236304,14.6834175 9.29288733,14.2928932 L15.2928873,8.29289322 C15.6714663,7.91431428 16.2810527,7.90106866 16.6757187,8.26284586 L22.6757187,13.7628459 C23.0828377,14.1360383 23.1103407,14.7686056 22.7371482,15.1757246 C22.3639558,15.5828436 21.7313885,15.6103465 21.3242695,15.2371541 L16.0300699,10.3841378 L10.7071009,15.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" transform="translate(15.999997, 11.999999) scale(-1, 1) rotate(-270.000000) translate(-15.999997, -11.999999) "></path>
+										</g>
+									</svg>
+								</span>
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+										<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+											<polygon points="0 0 24 0 24 24 0 24"></polygon>
+											<path d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z" fill="#000000" fill-rule="nonzero"></path>
+											<path d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999) "></path>
+										</g>
+									</svg>
+								</span>
+							</button>
+							<!--
+                            <button class="kt-aside__brand-aside-toggler kt-aside__brand-aside-toggler--left" id="kt_aside_toggler"><span></span></button>
+                            -->
+						</div>
+					</div>
 					<!-- end:: Brand -->
 
 					<!-- begin:: Aside Menu -->
 					<div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
-						<div id="kt_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown " data-ktmenu-vertical="1" data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
-							<ul class="kt-menu__nav ">
-								<li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--submenu-fullheight kt-menu__item--open kt-menu__item--here" aria-haspopup="true" data-ktmenu-submenu-toggle="click" data-ktmenu-dropdown-toggle-class="kt-aside-menu-overlay--on"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon2-protection"></i><span class="kt-menu__link-text">Applications</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-									<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-										<div class="kt-menu__wrapper">
-											<ul class="kt-menu__subnav">
-												<li class="kt-menu__item  kt-menu__item--parent kt-menu__item--submenu-fullheight" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">Applications</span></span></li>
-												<li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--open kt-menu__item--here" aria-haspopup="true" data-ktmenu-submenu-toggle="click" data-ktmenu-submenu-mode="accordion"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Resources</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-													<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-														<ul class="kt-menu__subnav">
-															<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="index.html" class="kt-menu__link "><span class="kt-menu__link-text">Timesheet</span></a></li>
-															<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><span class="kt-menu__link-text">Payroll</span></a></li>
-															<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><span class="kt-menu__link-text">Contacts</span></a></li>
-															<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><span class="kt-menu__link-text">Members</span></a></li>
-															<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><span class="kt-menu__link-text">Clients</span></a></li>
-														</ul>
-													</div>
-												</li>
-												<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><span class="kt-menu__link-text">Finance</span></a></li>
-												<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><span class="kt-menu__link-text">Support</span></a></li>
-												<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><span class="kt-menu__link-text">Administration</span></a></li>
-												<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><span class="kt-menu__link-text">Management</span></a></li>
-												<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><span class="kt-menu__link-text">Order Management</span></a></li>
-												<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><span class="kt-menu__link-text">Delivery</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--brand">2</span></span></a></li>
-												<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><span class="kt-menu__link-text">Products</span></a></li>
-												<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><span class="kt-menu__link-text">Support</span></a></li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								<li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="click"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon2-calendar-5"></i><span class="kt-menu__link-text">Add</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-									<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-										<ul class="kt-menu__subnav">
-											<li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">Add</span></span></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon la la-commenting"></i><span class="kt-menu__link-text">Post</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon la la-user"></i><span class="kt-menu__link-text">Member</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon la la-cart-arrow-down"></i><span class="kt-menu__link-text">Order</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon la la-coffee"></i><span class="kt-menu__link-text">Entry</span></a></li>
-										</ul>
-									</div>
-								</li>
-								<li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--bottom" aria-haspopup="true" data-ktmenu-submenu-toggle="click" data-ktmenu-link-redirect="1"><a target="_blank" href="javascript:;" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon2-analytics-2"></i><span class="kt-menu__link-text">Customers</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-									<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-										<ul class="kt-menu__subnav">
-											<li class="kt-menu__item  kt-menu__item--parent kt-menu__item--bottom" aria-haspopup="true" data-ktmenu-link-redirect="1"><span class="kt-menu__link"><span class="kt-menu__link-text">Customers</span></span></li>
-											<li class="kt-menu__item " aria-haspopup="true" data-ktmenu-link-redirect="1"><a href="#" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Reports</span></a></li>
-											<li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Cases</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-												<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-													<ul class="kt-menu__subnav">
-														<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-computer"></i><span class="kt-menu__link-text">Pending</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--warning">10</span></span></a></li>
-														<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-signs-2"></i><span class="kt-menu__link-text">Urgent</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--danger">6</span></span></a></li>
-														<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-clipboard"></i><span class="kt-menu__link-text">Done</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--success">2</span></span></a></li>
-														<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-multimedia-2"></i><span class="kt-menu__link-text">Archive</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--info kt-badge--inline">245</span></span></a></li>
-													</ul>
-												</div>
-											</li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Clients</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Audit</span></a></li>
-										</ul>
-									</div>
-								</li>
-								<li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--bottom-2" aria-haspopup="true" data-ktmenu-submenu-toggle="click"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Settings</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-									<div class="kt-menu__submenu kt-menu__submenu--up"><span class="kt-menu__arrow"></span>
-										<ul class="kt-menu__subnav">
-											<li class="kt-menu__item  kt-menu__item--parent kt-menu__item--bottom-2" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">Settings</span></span></li>
-											<li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="#" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">Profile</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-												<div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
-													<ul class="kt-menu__subnav">
-														<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-computer"></i><span class="kt-menu__link-text">Pending</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--brand">7</span></span></a></li>
-														<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-signs-2"></i><span class="kt-menu__link-text">Urgent</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--danger">6</span></span></a></li>
-														<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-clipboard"></i><span class="kt-menu__link-text">Done</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--success">2</span></span></a></li>
-														<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-multimedia-2"></i><span class="kt-menu__link-text">Archive</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--info kt-badge--inline">245</span></span></a></li>
-													</ul>
-												</div>
-											</li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">Accounts</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">Help</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--line"><span></span></i><span class="kt-menu__link-text">Notifications</span></a></li>
-										</ul>
-									</div>
-								</li>
-								<li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--bottom-1" aria-haspopup="true" data-ktmenu-submenu-toggle="click"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon2-hourglass-1"></i><span class="kt-menu__link-text">Help</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--brand kt-badge--rounded">2</span></span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-									<div class="kt-menu__submenu kt-menu__submenu--up"><span class="kt-menu__arrow"></span>
-										<ul class="kt-menu__subnav">
-											<li class="kt-menu__item  kt-menu__item--parent kt-menu__item--bottom-1" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">Help</span><span class="kt-menu__link-badge"><span class="kt-badge kt-badge--brand kt-badge--rounded">2</span></span></span></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Support</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Blog</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Documentation</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Pricing</span></a></li>
-											<li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Terms</span></a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
+						<div id="kt_aside_menu" class="kt-aside-menu px-3 pt-0" data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">
+							<div class="kt-grid__item">
+								<h5 class="aside-hd mb-4 rounded">
+									Filters
+								</h5>
+							</div>
+							<div class="d-flex justify-content-between mt-3">
+								<h6 class="aside-sub-hd pr-3">Home Team</h6>
+								<a href="#">Reset All</a>
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">Wins</p>
+								<input type="range" min="0" max="100" step="1" value="30" />
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">Loses</p>
+								<input type="range" min="0" max="100" step="1" value="27" />
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">BTTS</p>
+								<input type="range" min="0" max="100" step="1" value="42" />
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">Over 2.5 Goals</p>
+								<input type="range" min="0" max="100" step="1" value="68" />
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">Avg Cards For</p>
+								<input type="range" min="0.0" max="2.0" step="0.1" value="1.6" />
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">Avg Goals Scored</p>
+								<input type="range" min="0.0" max="2.0" step="0.1" value="1.4" />
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">Avg Points</p>
+								<input type="range" min="0.0" max="2.0" step="0.1" value="1.4" />
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">Avg Corners For</p>
+								<input type="range" min="0.0" max="10.0" step="0.1" value="8.4" />
+							</div>
+
+							<div class="d-flex justify-content-between mt-3">
+								<h6 class="aside-sub-hd pr-3">Away Team</h6>
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">Wins</p>
+								<input type="range" min="0" max="100" step="1" value="30" />
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">Loses</p>
+								<input type="range" min="0" max="100" step="1" value="27" />
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">BTTS</p>
+								<input type="range" min="0" max="100" step="1" value="42" />
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">Over 2.5 Goals</p>
+								<input type="range" min="0" max="100" step="1" value="68" />
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">Avg Cards For</p>
+								<input type="range" min="0.0" max="2.0" step="0.1" value="1.6" />
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">Avg Goals Scored</p>
+								<input type="range" min="0.0" max="2.0" step="0.1" value="1.4" />
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">Avg Points</p>
+								<input type="range" min="0.0" max="2.0" step="0.1" value="1.4" />
+							</div>
+							<div class="filter-single mb-3">
+								<p class="mb-0 font-weight-semi-bold text-dark">Avg Corners For</p>
+								<input type="range" min="0.0" max="10.0" step="0.1" value="8.4" />
+							</div>
 						</div>
 					</div>
 
@@ -184,7 +193,7 @@
 						<button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
 						<div class="kt-header-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_header_menu_wrapper">
 							<div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile justify-content-end">
-								<ul class="kt-menu__nav ">
+								<ul class="kt-menu__nav pr-2">
 									<li class="kt-menu__item"><a href="predictions.html" class="kt-menu__link "><span class="kt-menu__link-text">Predictions</span></a></li>
 									<li class="kt-menu__item"><a href="podcast.html" class="kt-menu__link "><span class="kt-menu__link-text">Podcast</span></a></li>
 									<li class="kt-menu__item"><a href="contact.html" class="kt-menu__link "><span class="kt-menu__link-text">Contact</span></a></li>
@@ -200,9 +209,9 @@
 
 						<!-- begin:: Subheader -->
 						<div class="kt-subheader   kt-grid__item" id="kt_subheader">
-							<div class="kt-container  kt-container--fluid "> 
-								<div class="kt-subheader__main">
-									<h3 class="kt-subheader__title">
+							<div class="kt-container  kt-container--fluid ">
+								<div class="kt-subheader__main w-100">
+									<h3 class="kt-subheader__title font-weight-bold pb-2 my-2">
 										Games </h3>
 								</div>
 							</div>
@@ -222,13 +231,13 @@
 									<!--begin:: Widgets/Trends-->
 									<div class="kt-portlet kt-portlet--head--noborder kt-portlet--height-fluid">
 										<div class="kt-portlet__head kt-portlet__space-x">
-											<div class="kt-portlet__head-label">
-												<h3 class="kt-portlet__head-title text-uppercase">
-													Premier League
+											<div class="kt-portlet__head-label truncate">
+												<h3 class="kt-portlet__head-title text-uppercase truncate">
+													<img src="assets/images/plus-icon.svg" class="mr-3" width="36" height="21" alt="">Premier League
 												</h3>
 											</div>
 											<div class="kt-portlet__head-toolbar">
-												<div class="btns-group">
+												<div class="btns-group text-nowrap">
 													<a href="#" class="btn btn-label-warning btn-sm btn-bold text-uppercase">Odds</a>
 													<a href="#" class="btn btn-label-danger btn-sm btn-bold text-uppercase">Injury</a>
 													<a href="#" class="btn btn-label-success btn-sm btn-bold text-uppercase">Table</a>
@@ -237,65 +246,1112 @@
 										</div>
 										<div class="kt-portlet__body kt-portlet__body--fluid kt-portlet__body--fit">
 											<div class="kt-widget4 kt-widget4--sticky">
-												<div class="kt-widget4__chart">
-													<canvas id="kt_chart_trends_stats" style="height: 240px;"></canvas>
-												</div>
-												<div class="kt-widget4__items kt-widget4__items--bottom kt-portlet__space-x kt-margin-b-20">
-													<div class="row">
-														<div class="col-sm-4">
-															<div class="progress kt-progress--sm">
-																<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 55%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+												<div class="kt-widget4__items kt-widget4__items--bottom kt-portlet__space-x kt-margin-b-15">
+													<div class="row align-items-center mt-4">
+														<div class="col-3 col-sm-2">
+															<img src="assets/images/arsenal-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+														<div class="col-6 col-sm-8">
+															<h5 class="text-center text-dark">Arsenal V Chelsea</h5>
+															<p class="text-center mb-0 text-dark">1st January 15:00</p>
+														</div>
+														<div class="col-3 col-sm-2 text-right">
+															<img src="assets/images/chelsea-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+													</div>
+													<div class="row mt-4 team-stats-wrap">
+														<div class="col-6">
+															<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pr-3">
+																Home Team
+															</h6>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
 															</div>
 														</div>
-													</div> 
-													
-													<div class="kt-widget4__item">
-														<div class="kt-widget4__img kt-widget4__img--logo">
-															<img src="assets/media/client-logos/logo3.png" alt="">
+														<div class="col-6">
+															<div class="text-right">
+																<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pl-3">
+																	Away Team
+																</h6>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
 														</div>
-														<div class="kt-widget4__info">
-															<a href="#" class="kt-widget4__title">
-																Phyton
-															</a>
-															<span class="kt-widget4__sub">
-																A Programming Language
-															</span>
-														</div>
-														<span class="kt-widget4__ext">
-															<span class="kt-widget4__number kt-font-danger">+$17</span>
-														</span>
 													</div>
-													<div class="kt-widget4__item">
-														<div class="kt-widget4__img kt-widget4__img--logo">
-															<img src="assets/media/client-logos/logo1.png" alt="">
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!--end:: Widgets/Trends-->
+								</div>
+								<div class="col-xl-4 col-lg-6 order-lg-1 order-xl-1">
+
+									<!--begin:: Widgets/Trends-->
+									<div class="kt-portlet kt-portlet--head--noborder kt-portlet--height-fluid">
+										<div class="kt-portlet__head kt-portlet__space-x">
+											<div class="kt-portlet__head-label truncate">
+												<h3 class="kt-portlet__head-title text-uppercase truncate">
+													<img src="assets/images/plus-icon.svg" class="mr-3" width="36" height="21" alt="">Premier League
+												</h3>
+											</div>
+											<div class="kt-portlet__head-toolbar">
+												<div class="btns-group text-nowrap">
+													<a href="#" class="btn btn-label-warning btn-sm btn-bold text-uppercase">Odds</a>
+													<a href="#" class="btn btn-label-danger btn-sm btn-bold text-uppercase">Injury</a>
+													<a href="#" class="btn btn-label-success btn-sm btn-bold text-uppercase">Table</a>
+												</div>
+											</div>
+										</div>
+										<div class="kt-portlet__body kt-portlet__body--fluid kt-portlet__body--fit">
+											<div class="kt-widget4 kt-widget4--sticky">
+												<div class="kt-widget4__items kt-widget4__items--bottom kt-portlet__space-x kt-margin-b-15">
+													<div class="row align-items-center mt-4">
+														<div class="col-3 col-sm-2">
+															<img src="assets/images/arsenal-logo.jpg" class="img-fluid" width="100" alt="">
 														</div>
-														<div class="kt-widget4__info">
-															<a href="#" class="kt-widget4__title">
-																FlyThemes
-															</a>
-															<span class="kt-widget4__sub">
-																A Let's Fly Fast Again Language
-															</span>
+														<div class="col-6 col-sm-8">
+															<h5 class="text-center text-dark">Arsenal V Chelsea</h5>
+															<p class="text-center mb-0 text-dark">1st January 15:00</p>
 														</div>
-														<span class="kt-widget4__ext">
-															<span class="kt-widget4__number kt-font-danger">+$300</span>
-														</span>
+														<div class="col-3 col-sm-2 text-right">
+															<img src="assets/images/chelsea-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
 													</div>
-													<div class="kt-widget4__item">
-														<div class="kt-widget4__img kt-widget4__img--logo">
-															<img src="assets/media/client-logos/logo2.png" alt="">
+													<div class="row mt-4 team-stats-wrap">
+														<div class="col-6">
+															<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pr-3">
+																Home Team
+															</h6>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
 														</div>
-														<div class="kt-widget4__info">
-															<a href="#" class="kt-widget4__title">
-																AirApp
-															</a>
-															<span class="kt-widget4__sub">
-																Awesome App For Project Management
-															</span>
+														<div class="col-6">
+															<div class="text-right">
+																<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pl-3">
+																	Away Team
+																</h6>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
 														</div>
-														<span class="kt-widget4__ext">
-															<span class="kt-widget4__number kt-font-danger">+$6700</span>
-														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!--end:: Widgets/Trends-->
+								</div>
+								<div class="col-xl-4 col-lg-6 order-lg-1 order-xl-1">
+
+									<!--begin:: Widgets/Trends-->
+									<div class="kt-portlet kt-portlet--head--noborder kt-portlet--height-fluid">
+										<div class="kt-portlet__head kt-portlet__space-x">
+											<div class="kt-portlet__head-label truncate">
+												<h3 class="kt-portlet__head-title text-uppercase truncate">
+													<img src="assets/images/plus-icon.svg" class="mr-3" width="36" height="21" alt="">Premier League
+												</h3>
+											</div>
+											<div class="kt-portlet__head-toolbar">
+												<div class="btns-group text-nowrap">
+													<a href="#" class="btn btn-label-warning btn-sm btn-bold text-uppercase">Odds</a>
+													<a href="#" class="btn btn-label-danger btn-sm btn-bold text-uppercase">Injury</a>
+													<a href="#" class="btn btn-label-success btn-sm btn-bold text-uppercase">Table</a>
+												</div>
+											</div>
+										</div>
+										<div class="kt-portlet__body kt-portlet__body--fluid kt-portlet__body--fit">
+											<div class="kt-widget4 kt-widget4--sticky">
+												<div class="kt-widget4__items kt-widget4__items--bottom kt-portlet__space-x kt-margin-b-15">
+													<div class="row align-items-center mt-4">
+														<div class="col-3 col-sm-2">
+															<img src="assets/images/arsenal-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+														<div class="col-6 col-sm-8">
+															<h5 class="text-center text-dark">Arsenal V Chelsea</h5>
+															<p class="text-center mb-0 text-dark">1st January 15:00</p>
+														</div>
+														<div class="col-3 col-sm-2 text-right">
+															<img src="assets/images/chelsea-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+													</div>
+													<div class="row mt-4 team-stats-wrap">
+														<div class="col-6">
+															<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pr-3">
+																Home Team
+															</h6>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
+														</div>
+														<div class="col-6">
+															<div class="text-right">
+																<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pl-3">
+																	Away Team
+																</h6>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!--end:: Widgets/Trends-->
+								</div>
+								<div class="col-xl-4 col-lg-6 order-lg-1 order-xl-1">
+
+									<!--begin:: Widgets/Trends-->
+									<div class="kt-portlet kt-portlet--head--noborder kt-portlet--height-fluid">
+										<div class="kt-portlet__head kt-portlet__space-x">
+											<div class="kt-portlet__head-label truncate">
+												<h3 class="kt-portlet__head-title text-uppercase truncate">
+													<img src="assets/images/plus-icon.svg" class="mr-3" width="36" height="21" alt="">Premier League
+												</h3>
+											</div>
+											<div class="kt-portlet__head-toolbar">
+												<div class="btns-group text-nowrap">
+													<a href="#" class="btn btn-label-warning btn-sm btn-bold text-uppercase">Odds</a>
+													<a href="#" class="btn btn-label-danger btn-sm btn-bold text-uppercase">Injury</a>
+													<a href="#" class="btn btn-label-success btn-sm btn-bold text-uppercase">Table</a>
+												</div>
+											</div>
+										</div>
+										<div class="kt-portlet__body kt-portlet__body--fluid kt-portlet__body--fit">
+											<div class="kt-widget4 kt-widget4--sticky">
+												<div class="kt-widget4__items kt-widget4__items--bottom kt-portlet__space-x kt-margin-b-15">
+													<div class="row align-items-center mt-4">
+														<div class="col-3 col-sm-2">
+															<img src="assets/images/arsenal-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+														<div class="col-6 col-sm-8">
+															<h5 class="text-center text-dark">Arsenal V Chelsea</h5>
+															<p class="text-center mb-0 text-dark">1st January 15:00</p>
+														</div>
+														<div class="col-3 col-sm-2 text-right">
+															<img src="assets/images/chelsea-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+													</div>
+													<div class="row mt-4 team-stats-wrap">
+														<div class="col-6">
+															<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pr-3">
+																Home Team
+															</h6>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
+														</div>
+														<div class="col-6">
+															<div class="text-right">
+																<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pl-3">
+																	Away Team
+																</h6>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!--end:: Widgets/Trends-->
+								</div>
+								<div class="col-xl-4 col-lg-6 order-lg-1 order-xl-1">
+
+									<!--begin:: Widgets/Trends-->
+									<div class="kt-portlet kt-portlet--head--noborder kt-portlet--height-fluid">
+										<div class="kt-portlet__head kt-portlet__space-x">
+											<div class="kt-portlet__head-label truncate">
+												<h3 class="kt-portlet__head-title text-uppercase truncate">
+													<img src="assets/images/plus-icon.svg" class="mr-3" width="36" height="21" alt="">Premier League
+												</h3>
+											</div>
+											<div class="kt-portlet__head-toolbar">
+												<div class="btns-group text-nowrap">
+													<a href="#" class="btn btn-label-warning btn-sm btn-bold text-uppercase">Odds</a>
+													<a href="#" class="btn btn-label-danger btn-sm btn-bold text-uppercase">Injury</a>
+													<a href="#" class="btn btn-label-success btn-sm btn-bold text-uppercase">Table</a>
+												</div>
+											</div>
+										</div>
+										<div class="kt-portlet__body kt-portlet__body--fluid kt-portlet__body--fit">
+											<div class="kt-widget4 kt-widget4--sticky">
+												<div class="kt-widget4__items kt-widget4__items--bottom kt-portlet__space-x kt-margin-b-15">
+													<div class="row align-items-center mt-4">
+														<div class="col-3 col-sm-2">
+															<img src="assets/images/arsenal-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+														<div class="col-6 col-sm-8">
+															<h5 class="text-center text-dark">Arsenal V Chelsea</h5>
+															<p class="text-center mb-0 text-dark">1st January 15:00</p>
+														</div>
+														<div class="col-3 col-sm-2 text-right">
+															<img src="assets/images/chelsea-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+													</div>
+													<div class="row mt-4 team-stats-wrap">
+														<div class="col-6">
+															<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pr-3">
+																Home Team
+															</h6>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
+														</div>
+														<div class="col-6">
+															<div class="text-right">
+																<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pl-3">
+																	Away Team
+																</h6>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!--end:: Widgets/Trends-->
+								</div>
+								<div class="col-xl-4 col-lg-6 order-lg-1 order-xl-1">
+
+									<!--begin:: Widgets/Trends-->
+									<div class="kt-portlet kt-portlet--head--noborder kt-portlet--height-fluid">
+										<div class="kt-portlet__head kt-portlet__space-x">
+											<div class="kt-portlet__head-label truncate">
+												<h3 class="kt-portlet__head-title text-uppercase truncate">
+													<img src="assets/images/plus-icon.svg" class="mr-3" width="36" height="21" alt="">Premier League
+												</h3>
+											</div>
+											<div class="kt-portlet__head-toolbar">
+												<div class="btns-group text-nowrap">
+													<a href="#" class="btn btn-label-warning btn-sm btn-bold text-uppercase">Odds</a>
+													<a href="#" class="btn btn-label-danger btn-sm btn-bold text-uppercase">Injury</a>
+													<a href="#" class="btn btn-label-success btn-sm btn-bold text-uppercase">Table</a>
+												</div>
+											</div>
+										</div>
+										<div class="kt-portlet__body kt-portlet__body--fluid kt-portlet__body--fit">
+											<div class="kt-widget4 kt-widget4--sticky">
+												<div class="kt-widget4__items kt-widget4__items--bottom kt-portlet__space-x kt-margin-b-15">
+													<div class="row align-items-center mt-4">
+														<div class="col-3 col-sm-2">
+															<img src="assets/images/arsenal-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+														<div class="col-6 col-sm-8">
+															<h5 class="text-center text-dark">Arsenal V Chelsea</h5>
+															<p class="text-center mb-0 text-dark">1st January 15:00</p>
+														</div>
+														<div class="col-3 col-sm-2 text-right">
+															<img src="assets/images/chelsea-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+													</div>
+													<div class="row mt-4 team-stats-wrap">
+														<div class="col-6">
+															<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pr-3">
+																Home Team
+															</h6>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
+														</div>
+														<div class="col-6">
+															<div class="text-right">
+																<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pl-3">
+																	Away Team
+																</h6>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!--end:: Widgets/Trends-->
+								</div>
+								<div class="col-xl-4 col-lg-6 order-lg-1 order-xl-1">
+
+									<!--begin:: Widgets/Trends-->
+									<div class="kt-portlet kt-portlet--head--noborder kt-portlet--height-fluid">
+										<div class="kt-portlet__head kt-portlet__space-x">
+											<div class="kt-portlet__head-label truncate">
+												<h3 class="kt-portlet__head-title text-uppercase truncate">
+													<img src="assets/images/plus-icon.svg" class="mr-3" width="36" height="21" alt="">Premier League
+												</h3>
+											</div>
+											<div class="kt-portlet__head-toolbar">
+												<div class="btns-group text-nowrap">
+													<a href="#" class="btn btn-label-warning btn-sm btn-bold text-uppercase">Odds</a>
+													<a href="#" class="btn btn-label-danger btn-sm btn-bold text-uppercase">Injury</a>
+													<a href="#" class="btn btn-label-success btn-sm btn-bold text-uppercase">Table</a>
+												</div>
+											</div>
+										</div>
+										<div class="kt-portlet__body kt-portlet__body--fluid kt-portlet__body--fit">
+											<div class="kt-widget4 kt-widget4--sticky">
+												<div class="kt-widget4__items kt-widget4__items--bottom kt-portlet__space-x kt-margin-b-15">
+													<div class="row align-items-center mt-4">
+														<div class="col-3 col-sm-2">
+															<img src="assets/images/arsenal-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+														<div class="col-6 col-sm-8">
+															<h5 class="text-center text-dark">Arsenal V Chelsea</h5>
+															<p class="text-center mb-0 text-dark">1st January 15:00</p>
+														</div>
+														<div class="col-3 col-sm-2 text-right">
+															<img src="assets/images/chelsea-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+													</div>
+													<div class="row mt-4 team-stats-wrap">
+														<div class="col-6">
+															<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pr-3">
+																Home Team
+															</h6>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
+														</div>
+														<div class="col-6">
+															<div class="text-right">
+																<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pl-3">
+																	Away Team
+																</h6>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!--end:: Widgets/Trends-->
+								</div>
+								<div class="col-xl-4 col-lg-6 order-lg-1 order-xl-1">
+
+									<!--begin:: Widgets/Trends-->
+									<div class="kt-portlet kt-portlet--head--noborder kt-portlet--height-fluid">
+										<div class="kt-portlet__head kt-portlet__space-x">
+											<div class="kt-portlet__head-label truncate">
+												<h3 class="kt-portlet__head-title text-uppercase truncate">
+													<img src="assets/images/plus-icon.svg" class="mr-3" width="36" height="21" alt="">Premier League
+												</h3>
+											</div>
+											<div class="kt-portlet__head-toolbar">
+												<div class="btns-group text-nowrap">
+													<a href="#" class="btn btn-label-warning btn-sm btn-bold text-uppercase">Odds</a>
+													<a href="#" class="btn btn-label-danger btn-sm btn-bold text-uppercase">Injury</a>
+													<a href="#" class="btn btn-label-success btn-sm btn-bold text-uppercase">Table</a>
+												</div>
+											</div>
+										</div>
+										<div class="kt-portlet__body kt-portlet__body--fluid kt-portlet__body--fit">
+											<div class="kt-widget4 kt-widget4--sticky">
+												<div class="kt-widget4__items kt-widget4__items--bottom kt-portlet__space-x kt-margin-b-15">
+													<div class="row align-items-center mt-4">
+														<div class="col-3 col-sm-2">
+															<img src="assets/images/arsenal-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+														<div class="col-6 col-sm-8">
+															<h5 class="text-center text-dark">Arsenal V Chelsea</h5>
+															<p class="text-center mb-0 text-dark">1st January 15:00</p>
+														</div>
+														<div class="col-3 col-sm-2 text-right">
+															<img src="assets/images/chelsea-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+													</div>
+													<div class="row mt-4 team-stats-wrap">
+														<div class="col-6">
+															<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pr-3">
+																Home Team
+															</h6>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
+														</div>
+														<div class="col-6">
+															<div class="text-right">
+																<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pl-3">
+																	Away Team
+																</h6>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!--end:: Widgets/Trends-->
+								</div>
+								<div class="col-xl-4 col-lg-6 order-lg-1 order-xl-1">
+
+									<!--begin:: Widgets/Trends-->
+									<div class="kt-portlet kt-portlet--head--noborder kt-portlet--height-fluid">
+										<div class="kt-portlet__head kt-portlet__space-x">
+											<div class="kt-portlet__head-label truncate">
+												<h3 class="kt-portlet__head-title text-uppercase truncate">
+													<img src="assets/images/plus-icon.svg" class="mr-3" width="36" height="21" alt="">Premier League
+												</h3>
+											</div>
+											<div class="kt-portlet__head-toolbar">
+												<div class="btns-group text-nowrap">
+													<a href="#" class="btn btn-label-warning btn-sm btn-bold text-uppercase">Odds</a>
+													<a href="#" class="btn btn-label-danger btn-sm btn-bold text-uppercase">Injury</a>
+													<a href="#" class="btn btn-label-success btn-sm btn-bold text-uppercase">Table</a>
+												</div>
+											</div>
+										</div>
+										<div class="kt-portlet__body kt-portlet__body--fluid kt-portlet__body--fit">
+											<div class="kt-widget4 kt-widget4--sticky">
+												<div class="kt-widget4__items kt-widget4__items--bottom kt-portlet__space-x kt-margin-b-15">
+													<div class="row align-items-center mt-4">
+														<div class="col-3 col-sm-2">
+															<img src="assets/images/arsenal-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+														<div class="col-6 col-sm-8">
+															<h5 class="text-center text-dark">Arsenal V Chelsea</h5>
+															<p class="text-center mb-0 text-dark">1st January 15:00</p>
+														</div>
+														<div class="col-3 col-sm-2 text-right">
+															<img src="assets/images/chelsea-logo.jpg" class="img-fluid" width="100" alt="">
+														</div>
+													</div>
+													<div class="row mt-4 team-stats-wrap">
+														<div class="col-6">
+															<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pr-3">
+																Home Team
+															</h6>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
+														</div>
+														<div class="col-6">
+															<div class="text-right">
+																<h6 class="kt-portlet__head-subtitle font-weight-bold text-dark pl-3">
+																	Away Team
+																</h6>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Wins</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 33%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">33%</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Cards</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 44%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">1.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">Corners</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 85%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">8.5</div>
+															</div>
+															<div class="d-flex team-stats align-items-center text-dark">
+																<div class="stat-label">BTTS</div>
+																<div class="w-100 px-2">
+																	<div class="progress progress--sm">
+																		<div class="progress-bar kt-bg-brand" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+																	</div>
+																</div>
+																<div class="stat-value">4/6</div>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -371,18 +1427,28 @@
 		<script src="assets/js/scripts.bundle.js" type="text/javascript"></script>
 
 		<!--end::Global Theme Bundle -->
+		<script src="assets/plugins/rangeslider/rangeslider.js" type="text/javascript"></script>
+		<script>
+			$('input[type="range"]').rangeslider({
+				polyfill : false,
+				onInit : function() {
+					this.output = $( '<div class="range-output" />' ).insertAfter( this.$range ).html( this.$element.val() );
+				},
+				onSlide : function( position, value ) {
+					this.output.html( value );
+				}
+			});
 
-		<!--begin::Page Vendors(used by this page) -->
-		<script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
-		
-		<script src="assets/plugins/custom/gmaps/gmaps.js" type="text/javascript"></script>
 
-		<!--end::Page Vendors -->
+			var asideMenu = new KTMenu('kt_aside_menu', {
+				// vertical scroll
+				scroll: {
+					height: function() {
 
-		<!--begin::Page Scripts(used by this page) -->
-		<script src="assets/js/pages/dashboard.js" type="text/javascript"></script>
-
-		<!--end::Page Scripts -->
+					}
+				},
+			});
+		</script>
 	</body>
 
 	<!-- end::Body -->
