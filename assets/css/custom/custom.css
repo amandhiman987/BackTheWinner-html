@@ -75,6 +75,58 @@
     font-weight: 600 !important;
 }
 
+.table-sm thead tr th,
+.table-sm tbody tr td{
+    padding: 0.35rem;
+}
+
+.table-sm thead tr th{
+    font-weight: 600;
+}
+
+.table-custom thead tr th{
+    background: #22b9ff;
+    color: #fff;
+}
+
+.table-custom tbody tr:nth-child(even) td{
+    background: #e8f6ff;
+}
+
+.odds-overlay {
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    color: #fff;
+    padding: 0.45rem 0;
+    font-size: 0.835rem;
+    font-weight: 600;
+    border-radius: 0 0 4px 4px;
+    line-height: 1.65;
+}
+
+.table-striped thead th{
+    border-top: 1px #dcdddf solid !important;
+    border-bottom: 1px #dcdddf solid !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: transparent;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #f7f8fa;
+}
+
+.table-striped tbody tr.selected{
+    background: #b6e6fc;
+}
+
+.table-striped tbody tr.selected td{
+    border-color: #b6e6fc;
+}
+
 @media (min-width: 1025px){
     .kt-aside-menu-wrapper{
         position: relative;
