@@ -20,7 +20,7 @@
 
 .kt-subheader__title{
     border-bottom: 1px solid #22b9ff;
-    width: 100%;
+    width: 100%; 
 }
 
 .progress--sm{
@@ -34,12 +34,12 @@
 
 .team-stats{
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin: 0.2rem 0;
 }
 
 .team-stats .stat-label{
-    min-width: 52px;
+    min-width: 55px;
 }
 
 .team-stats .stat-value{
@@ -194,7 +194,14 @@
     color:#22b9ff;
 }
 
+.kt-aside{
+    width: 280px;
+}
+
 @media (min-width: 1025px){
+    .kt-aside--fixed .kt-wrapper{
+        padding-left: 280px;
+    }
     .kt-aside-menu-wrapper{
         position: relative;
     }
@@ -207,7 +214,7 @@
         right: 0;
     }
     .podcast-player{
-        left:250px;
+        left:280px;
     }
     .podcast-player .podcast-icon{
         margin: 0 2.125rem
